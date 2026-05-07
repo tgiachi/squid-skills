@@ -2,6 +2,12 @@
 
 Personal automation pack for Claude Code and Codex.
 
+Repository:
+
+```text
+https://github.com/tgiachi/squid-skills
+```
+
 This repository keeps the same workflows available in both tools:
 
 - Claude Code reads the local plugin in `.claude-plugin/` and exposes slash commands from `commands/`.
@@ -32,16 +38,29 @@ These workflows are intentionally conservative:
 
 ## Install Claude Code
 
-This repository is both the local marketplace and the plugin itself.
+Clone the repository first:
+
+```bash
+mkdir -p ~/projects
+git clone https://github.com/tgiachi/squid-skills.git ~/projects/squid-skills
+```
+
+This repository is both the local marketplace and the plugin itself. Point Claude Code at the cloned checkout.
 
 From inside Claude Code:
 
 ```text
-/plugin marketplace add /home/squid/projects/personal/squid-skill
+/plugin marketplace add ~/projects/squid-skills
 /plugin install squid@squid-skill
 ```
 
-To update after changing this repository:
+To update later:
+
+```bash
+git -C ~/projects/squid-skills pull --ff-only
+```
+
+Then refresh Claude Code:
 
 ```text
 /plugin marketplace update squid-skill
@@ -54,26 +73,39 @@ Claude Code commands accept a free-form `$ARGUMENTS` string for extra context, s
 
 Codex loads skills from `$CODEX_HOME/skills`, usually `~/.codex/skills`.
 
-Install with symlinks so edits in this repository are picked up by new Codex sessions:
+Clone the repository if you have not already done so:
+
+```bash
+mkdir -p ~/projects
+git clone https://github.com/tgiachi/squid-skills.git ~/projects/squid-skills
+```
+
+Install with symlinks so updates to the checkout are picked up by new Codex sessions:
 
 ```bash
 mkdir -p ~/.codex/skills
-ln -sfn /home/squid/projects/personal/squid-skill/codex/skills/squid-commit ~/.codex/skills/squid-commit
-ln -sfn /home/squid/projects/personal/squid-skill/codex/skills/squid-review ~/.codex/skills/squid-review
-ln -sfn /home/squid/projects/personal/squid-skill/codex/skills/squid-test-fix ~/.codex/skills/squid-test-fix
-ln -sfn /home/squid/projects/personal/squid-skill/codex/skills/squid-pr ~/.codex/skills/squid-pr
-ln -sfn /home/squid/projects/personal/squid-skill/codex/skills/squid-code-convention ~/.codex/skills/squid-code-convention
-ln -sfn /home/squid/projects/personal/squid-skill/codex/skills/squid-interface-docs ~/.codex/skills/squid-interface-docs
+ln -sfn ~/projects/squid-skills/codex/skills/squid-commit ~/.codex/skills/squid-commit
+ln -sfn ~/projects/squid-skills/codex/skills/squid-review ~/.codex/skills/squid-review
+ln -sfn ~/projects/squid-skills/codex/skills/squid-test-fix ~/.codex/skills/squid-test-fix
+ln -sfn ~/projects/squid-skills/codex/skills/squid-pr ~/.codex/skills/squid-pr
+ln -sfn ~/projects/squid-skills/codex/skills/squid-code-convention ~/.codex/skills/squid-code-convention
+ln -sfn ~/projects/squid-skills/codex/skills/squid-interface-docs ~/.codex/skills/squid-interface-docs
 ```
 
 If a real directory already exists at one of those paths, remove or rename it before creating the symlink.
+
+To update later:
+
+```bash
+git -C ~/projects/squid-skills pull --ff-only
+```
 
 Codex skills can be triggered by name, for example `$squid-commit`, or by a matching request such as `/vai`, "review this diff", or "make the tests pass".
 
 ## Repository Layout
 
 ```text
-squid-skill/
+squid-skills/
 |-- .claude-plugin/
 |   |-- marketplace.json
 |   `-- plugin.json
