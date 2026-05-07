@@ -1,0 +1,4 @@
+interface:
+  display_name: "Squid Interface Docs"
+  short_description: "Add C# XML docs to interfaces"
+  default_prompt: "Use $squid-interface-docs to document C# interfaces and their members."

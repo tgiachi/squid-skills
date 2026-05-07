@@ -1,0 +1,4 @@
+interface:
+  display_name: "Squid Review"
+  short_description: "Review changes for real risks"
+  default_prompt: "Use $squid-review to review the current changes for bugs, regressions, and missing tests."

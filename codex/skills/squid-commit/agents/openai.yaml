@@ -1,0 +1,4 @@
+interface:
+  display_name: "Squid Commit"
+  short_description: "Conventional commit shortcut"
+  default_prompt: "Use $squid-commit to stage safe changes and create an English Conventional Commit."

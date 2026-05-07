@@ -1,0 +1,4 @@
+interface:
+  display_name: "Squid Test Fix"
+  short_description: "Fix failing build or tests"
+  default_prompt: "Use $squid-test-fix to run verification, fix failures, and rerun until passing or blocked."

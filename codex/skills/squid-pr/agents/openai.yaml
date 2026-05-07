@@ -1,0 +1,4 @@
+interface:
+  display_name: "Squid PR"
+  short_description: "Generate PR description"
+  default_prompt: "Use $squid-pr to generate a concise pull request description from the current branch and diff."

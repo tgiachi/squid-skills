@@ -1,0 +1,9 @@
+{
+  "name": "squid",
+  "version": "0.2.0",
+  "description": "Squid's personal Claude Code plugin: conventions, commits, interface docs, review, test fixing, and PR descriptions.",
+  "author": {
+    "name": "squid",
+    "email": "squid@stormwind.it"
+  }
+}

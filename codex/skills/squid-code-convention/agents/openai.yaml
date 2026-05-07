@@ -1,0 +1,4 @@
+interface:
+  display_name: "Squid Code Convention"
+  short_description: "Generate project CODE_CONVENTION.md"
+  default_prompt: "Use $squid-code-convention to generate or refresh this project CODE_CONVENTION.md."
